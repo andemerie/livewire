@@ -39,7 +39,7 @@ static void onMouse( int event, int x, int y, int flags, void* )
 ///////////////////////////////////////////////
 int main(int argc, char* argv[]) {
 
-    img = cv::imread("/home/ar/img/lena.png", 1);
+    img = cv::imread("lena.png", 1);
 //    img = cv::imread("/home/ar/img/MERKAARTOR/velikoselskoye_LC81850232014073LGN00_crop_psharp8.tif", 1);
 
 //    imgF = calcLiveWireCostFcn(img);
