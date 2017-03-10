@@ -37,6 +37,17 @@ cv::Mat calcCanny(const cv::Mat &img) {
     return (1.0 - ret/vMax);
 }
 
+void use_superpixels(cv::Mat &image) {
+	cv::Mat image_contours = cv::imread("dog_contours.bmp", CV_LOAD_IMAGE_GRAYSCALE);
+	for (int i = 0; i < image_contours.rows; i++) {
+		for (int j = 0; j < image_contours.cols; j++) {
+			if (image_contours.at<unsigned char>(i, j) == 255) {
+				image.at<double>(i, j) = 1;
+			}
+		}
+	}
+}
+
 
 cv::Mat calcLiveWireCostFcn(const cv::Mat &img) {
     cv::Mat imgg = img;
@@ -50,6 +61,7 @@ cv::Mat calcLiveWireCostFcn(const cv::Mat &img) {
     double pE = 0.2;
     //    std::cout << imgG.type() << "/" << imgE.type() << std::endl;
     ret = pG*imgG + pE*imgE;
+	use_superpixels(ret);
     return ret;
 }
 

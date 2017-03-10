@@ -3,8 +3,6 @@
 
 #include <iostream>
 
-//#include <cv.h>
-//#include <highgui.h>
 #include "opencv2/highgui/highgui.hpp"
 #include "opencv2/imgproc/imgproc.hpp"
 
@@ -13,6 +11,7 @@
 ///////////////////////////////////////////////////
 cv::Mat calcImgGrad(const cv::Mat& img);
 cv::Mat calcCanny(const cv::Mat& img);
+void use_superpixels(cv::Mat &image);
 cv::Mat calcLiveWireCostFcn(const cv::Mat& img);
 cv::Mat normImage(const cv::Mat& img);
 
